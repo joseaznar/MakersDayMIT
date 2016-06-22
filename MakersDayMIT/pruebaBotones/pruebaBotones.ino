@@ -9,7 +9,9 @@ led21=6;
 led22=5;
 led23=4;
 buzzer2=3;
+buzzer=2;
 void setup() {
+  pinMode(buzzer,OUTPUT);
   pinMode(startButton,INPUT);
   pinMode(señalBoton1,INPUT);
   pinMode(led11,OUTPUT);
@@ -37,6 +39,7 @@ void loop() {
     juega2();
   }
   if (ganador){
+    digitalWrite(buzzer,HIGH);
     cont1=0;
     cont2=0;
     ganador=false;
